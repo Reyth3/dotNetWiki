@@ -1,0 +1,20 @@
+﻿@model List<dotNetWiki.Models.Page>
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>All Pages</h1>
+    @if (Model.Count() == 0)
+    {
+        <p>There are no pages on this wiki.</p>
+    }
+    else
+    {
+        <ul>
+        @foreach (var p in Model)
+        {
+            <li>p.Name</li>
+        }
+        </ul>
+    }

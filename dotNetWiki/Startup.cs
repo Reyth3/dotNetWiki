@@ -8,7 +8,6 @@ namespace dotNetWiki
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
         }
     }
 }
