@@ -15,5 +15,7 @@ namespace dotNetWiki.Models
         public string Category { get; set; }
 
         public string Text { get; set; }
+
+        public virtual List<EditData> Edits { get; set; }
     }
 }

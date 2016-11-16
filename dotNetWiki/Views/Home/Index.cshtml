@@ -16,7 +16,7 @@ else
     <ul>
     @foreach(var article in Model)
     {
-        <li>@article.Name</li>
+        <li>@Html.ActionLink(article.Name, "Show", "Page", new { id = article.Id }, null)</li>
     }
     </ul>
 }

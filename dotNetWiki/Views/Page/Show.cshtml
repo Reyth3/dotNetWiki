@@ -1,0 +1,31 @@
+﻿@model dotNetWiki.Models.Page
+@{
+    ViewBag.Title = "Show";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Model != null)
+{
+    <h2>@Model.Name</h2>
+    <div id="page-content">@Model.Text</div>
+    <div>
+        @if(Model.Edits != null)
+        {
+            <hr />
+            <h4>Edits history</h4>
+            <table class="stretched">
+            @foreach(var edit in Model.Edits)
+            {
+                <tr>
+                    <td width="75%">@edit.Description</td>
+                    <td align="right">@edit.Time.ToLocalTime()</td>
+                </tr>
+            }
+            </table>
+        }
+    </div>
+}
+else
+{
+    <h2>Error!</h2>
+    <p>This page doesn't exist. You can @Html.ActionLink("Create it right now", "Create") or browse existing pages.</p>
+}

@@ -179,6 +179,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\EditData.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\WikiContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -225,6 +226,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Page\Index.cshtml" />
     <Content Include="Views\Page\Create.cshtml" />
+    <Content Include="Views\Page\Submit.cshtml" />
+    <Content Include="Views\Page\Show.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

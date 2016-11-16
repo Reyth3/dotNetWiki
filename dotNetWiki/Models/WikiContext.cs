@@ -11,9 +11,11 @@ namespace dotNetWiki.Models
     {
         public WikiContext()
         {
+            Database.CreateIfNotExists();
             Database.SetInitializer<WikiContext>(new DropCreateDatabaseIfModelChanges<WikiContext>());
         }
 
         public DbSet<Page> Pages { get; set; }
+        public DbSet<EditData> Edits { get; set; }
     }
 }

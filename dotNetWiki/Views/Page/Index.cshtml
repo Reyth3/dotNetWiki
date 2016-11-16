@@ -4,17 +4,23 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>All Pages</h1>
     @if (Model.Count() == 0)
     {
+        <h1>All Pages</h1>
         <p>There are no pages on this wiki.</p>
+    }
+    else if (Model.Count == 1)
+    {
+        <h2>@Model[0].Name</h2>
+        <div id="content">@Model[0].Text</div>
     }
     else
     {
+        <h1>All Pages</h1>
         <ul>
         @foreach (var p in Model)
         {
-            <li>p.Name</li>
+            <li>@Html.ActionLink(p.Name, "Show", new { id = p.Id })</li>
         }
         </ul>
     }

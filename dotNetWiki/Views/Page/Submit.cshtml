@@ -1,0 +1,16 @@
+﻿@model dotNetWiki.Models.Page
+@{
+    ViewBag.Title = "Submit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Submit Page</h2>
+@if(Model != null)
+{
+    <p>Page created successfully. @Html.ActionLink("Go to the page", "Show", new { id = Model.Id })</p>
+}
+else
+{
+    <p>An error occured while creating new page.</p>
+}
+
