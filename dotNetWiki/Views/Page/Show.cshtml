@@ -6,7 +6,7 @@
 @if (Model != null)
 {
     <h2>@Model.Name</h2>
-    <div id="page-content">@Model.Text</div>
+    <div id="page-content">@Model.ParseMarkup()</div>
     <div>
         @if(Model.Edits != null)
         {
