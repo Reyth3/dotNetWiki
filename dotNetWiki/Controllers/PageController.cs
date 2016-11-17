@@ -58,6 +58,9 @@ namespace dotNetWiki.Controllers
         public ActionResult Show(int id)
         {
             var page = new WikiContext().Pages.Where(o => o.Id == id).FirstOrDefault();
+            if (page != null)
+                ViewBag.Title = page.Name;
+            else ViewBag.Title = "Error";
             return View(page);
         }
     }
