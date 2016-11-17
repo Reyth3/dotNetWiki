@@ -36,8 +36,7 @@ div#sidebar {
     width: 14%;
     padding: 6px;
     vertical-align: top;
-    border-width: 1px;
-    border-color: black;
+    border: 1px solid black;
     background-color: #EAEAEA;
     display: inline-block;
 }
@@ -46,9 +45,27 @@ div.sidebar-block {
     padding: 2px;
     margin: 2px;
     border-radius: 4px;
-    border-color: grey;
-    border-width: 1px;
+    border: 1px solid grey;
     text-align: center;
+}
+
+div.sidebar-block-header {
+    width: 100%;
+    padding: 4px;
+    background-color: #EAEAEA;
+    font-weight: 500;
+    text-align: center;
+}
+
+div.sidebar-block > a:hover {
+    background-color: #D0D0EA;
+    transition: all linear 0.1s;
+}
+
+div.sidebar-block > a {
+    display: block;
+    margin: 2px;
+    background-color: #F0F0F0;
 }
 
 div#main-content {

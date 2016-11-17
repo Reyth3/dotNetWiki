@@ -15,7 +15,13 @@
         </div>
         <div id="sidebar">
             <div class="sidebar-block">
-                TODO: Main nav block
+                <div class="sidebar-block-header">
+                    Main Navigation
+                </div>
+                @Html.ActionLink("Home", "Index", "Home")
+                @Html.ActionLink("Categories", "Index", "Category")
+                @Html.ActionLink("All Pages", "Index", "Page")
+                @Html.ActionLink("Create Page", "Create", "Page")
             </div>
         </div>
         <div id="main-content">

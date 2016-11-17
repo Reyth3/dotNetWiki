@@ -1,0 +1,18 @@
+﻿@model List<IGrouping<string,dotNetWiki.Models.Page>>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>All Categories</h2>
+@if(Model.Count() == 0)
+{
+    <p>There are no categories on this wiki.</p>
+}
+else {
+    <ul>
+    @foreach(var cat in Model)
+    {
+        <li>@Html.ActionLink(cat.Key, "Show", new { name = cat.Key }) <em>(@cat.Count() page@(cat.Count() > 1 ? "s" : ""))</em></li>
+    }
+    </ul>
+}
