@@ -15,5 +15,12 @@ namespace dotNetWiki.Controllers
             var categories = new WikiContext().Pages.GroupBy(o => o.Category).ToList();
             return View(categories);
         }
+
+        public ActionResult Show(string id)
+        {
+            var cat = new WikiContext().Pages.Where(o => o.Category == id).ToList();
+            ViewBag.Title = id;
+            return View(cat);
+        }
     }
 }

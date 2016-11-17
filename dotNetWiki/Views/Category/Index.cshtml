@@ -12,7 +12,7 @@ else {
     <ul>
     @foreach(var cat in Model)
     {
-        <li>@Html.ActionLink(cat.Key, "Show", new { name = cat.Key }) <em>(@cat.Count() page@(cat.Count() > 1 ? "s" : ""))</em></li>
+        <li>@Html.ActionLink(cat.Key, "Show", new { id = cat.Key }) <em>(@cat.Count() page@(cat.Count() > 1 ? "s" : ""))</em></li>
     }
     </ul>
 }

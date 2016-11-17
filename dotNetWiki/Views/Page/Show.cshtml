@@ -9,7 +9,7 @@
     <div id="page-content">@Model.ParseMarkup()</div>
     <div>
         <hr />
-        <p>Category: @Html.ActionLink(Model.Category, "Show", "Category", new { name = Model.Category }, null)</p>
+        <p>Category: @Html.ActionLink(Model.Category, "Show", "Category", new { id = Model.Category }, null)</p>
         @if(Model.Edits != null)
         {
             <hr />

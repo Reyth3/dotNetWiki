@@ -230,6 +230,7 @@
     <Content Include="Views\Page\Submit.cshtml" />
     <Content Include="Views\Page\Show.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\Show.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
