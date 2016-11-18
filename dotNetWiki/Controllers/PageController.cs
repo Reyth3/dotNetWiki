@@ -22,7 +22,8 @@ namespace dotNetWiki.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            var page = new Models.Page();
+            return View(page);
         }
 
         [HttpPost]
@@ -31,6 +32,8 @@ namespace dotNetWiki.Controllers
             var title = Request["title"];
             var category = Request["category"];
             var content = Request["content"];
+            var id = 0;
+            int.TryParse(Request["pId"], out id);
 
             Page page = null;
             if(content != null && title != null && category != null)
@@ -48,7 +51,17 @@ namespace dotNetWiki.Controllers
                 try
                 {
                     var wc = new WikiContext();
-                    wc.Pages.Add(page);
+                    if(id == 0)
+                        wc.Pages.Add(page);
+                    else
+                    {
+                        var p = wc.Pages.First(o => o.Id == id);
+                        p.Name = title;
+                        p.Text = content;
+                        p.Category = category;
+                        p.Edits.Add(new EditData() { Owner = p, Time = DateTime.UtcNow, Description = Request["edit"] });
+                        page = p;
+                    }
                     wc.SaveChanges();
                 } catch { page = null; }
             }
@@ -61,6 +74,12 @@ namespace dotNetWiki.Controllers
             if (page != null)
                 ViewBag.Title = page.Name;
             else ViewBag.Title = "Error";
+            return View(page);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var page = new WikiContext().Pages.FirstOrDefault(o => o.Id == id);
             return View(page);
         }
     }

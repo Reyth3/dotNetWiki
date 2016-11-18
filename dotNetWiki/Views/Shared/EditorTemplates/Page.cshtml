@@ -1,0 +1,8 @@
+﻿@model dotNetWiki.Models.Page
+
+<h3>Page title</h3>
+<input class="stretched" type="text" name="title" value="@Model.Name" />
+<h3>Category</h3>
+<input class="stretched" type="text" name="category" value="@Model.Category" />
+<h3>Content</h3>
+<textarea class="stretched" style="min-height: 460px;" name="content">@Model.Text</textarea>

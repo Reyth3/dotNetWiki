@@ -6,11 +6,6 @@
 
 <h2>Create Page</h2>
 <form method="post" action="~/Page/Submit">
-    <h3>Page title</h3>
-    <input class="stretched" type="text" name="title" />
-    <h3>Category</h3>
-    <input class="stretched" type="text" name="category" />
-    <h3>Content</h3>
-    <textarea class="stretched" style="min-height: 460px;" name="content"></textarea>
+    @Html.EditorFor(o => o)
     <input type="submit" style="margin: 8px;" />
 </form>

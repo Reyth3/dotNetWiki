@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit Pages</h2>
+@if (Model != null)
+{
+<form method="post" action="~/Page/Submit">
+    <input type="hidden" name="pId" value="@Model.Id" />
+    @Html.EditorFor(o => o)
+    <hr />
+    <h3>Edit Description</h3>
+    <input type="text" name="edit" class="stretched" />
+    <input type="submit" style="margin: 8px;" />
+</form>
+}
+else {
+    <p>This page doesn't exist. @(Html.ActionLink("Create new page", "Create")).</p>
+}

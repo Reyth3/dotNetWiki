@@ -5,6 +5,7 @@
 @if (Model != null)
 {
     <h2>@Model.Name</h2>
+    <p>@Html.ActionLink("Edit", "Edit", new { id = Model.Id }, null)</p>
     <div id="page-content">@Model.ParseMarkup()</div>
     <div>
         <hr />
